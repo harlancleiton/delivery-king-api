@@ -50,3 +50,20 @@ Factory.blueprint('Adonis/Acl/Role', (faker, i, data) => {
       }
   }
 })
+
+Factory.blueprint('App/Models/Image', (faker, i, data) => {
+  return {
+    url: faker.url({ extensions: ['jpg', 'png'] }),
+    size: faker.floating({ min: 0, max: 30 }),
+    name: faker.string(),
+    ...data,
+  }
+})
+
+Factory.blueprint('App/Models/Category', (faker, i, data) => {
+  return {
+    title: faker.country({ full: true }),
+    description: faker.paragraph(),
+    ...data,
+  }
+})
