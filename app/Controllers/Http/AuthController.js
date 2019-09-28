@@ -17,13 +17,14 @@ class AuthController {
    * @param {Object} ctx.transform
    */
   async register({ request, response, transform }) {
-    const { first_name, last_name, email, password } = request.all()
+    const { first_name, last_name, email, password, cpf } = request.all()
     const role = await Role.findByOrFail('slug', 'client')
     let user = await User.create({
       first_name,
       last_name,
       email,
       password,
+      cpf,
     })
     await user.roles().attach([role.id])
     user = await transform.item(user, Transformer)

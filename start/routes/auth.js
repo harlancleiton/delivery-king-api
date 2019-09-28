@@ -4,8 +4,9 @@
 const Route = use('Route')
 
 Route.group(() => {
-  Route.post('register', 'AuthController.register').as('auth.register')
-  // .validator('Auth/Register')
+  Route.post('register', 'AuthController.register')
+    .as('auth.register')
+    .validator('Auth/Register')
   Route.post('login', 'AuthController.login')
     .as('auth.login')
     .validator('Auth/Login')
