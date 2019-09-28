@@ -25,3 +25,28 @@ Factory.blueprint('App/Models/User', async (faker, i, data) => {
     ...data,
   }
 })
+
+Factory.blueprint('Adonis/Acl/Role', (faker, i, data) => {
+  const { slug } = data
+  switch (slug) {
+    case 'admin':
+      return {
+        name: 'Admin',
+        slug,
+        description: 'System Administrator',
+      }
+    case 'deliveryman':
+      return {
+        name: 'DeliveryMan',
+        slug,
+        description: 'DeliveryMan Lorem Ipsum',
+      }
+    case 'client':
+    default:
+      return {
+        name: 'Client',
+        slug: 'client',
+        description: 'Only Client',
+      }
+  }
+})
