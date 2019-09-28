@@ -1,19 +1,17 @@
 'use strict'
 
+const Antl = use('Antl')
+
 class Login {
   get rules() {
     return {
       email: 'required|email',
-      password: 'required',
+      password: 'required|string',
     }
   }
 
   get messages() {
-    return {
-      'email.required': 'Email não informado',
-      'email.email': 'Você deve informar um endereço de email válido',
-      'password.required': 'Senha não informada',
-    }
+    return Antl.list('validation')
   }
 
   get validateAll() {
