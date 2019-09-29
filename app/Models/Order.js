@@ -11,6 +11,10 @@ class Order extends Model {
   user() {
     return this.belongsTo('App/Models/User', 'user_id', 'id')
   }
+
+  coupons() {
+    return this.belongsToMany('App/Models/Coupon')
+  }
 }
 
 module.exports = Order

@@ -11,6 +11,10 @@ class Category extends Model {
   products() {
     return this.belongsToMany('App/Models/Product').withTimestamps()
   }
+
+  coupons() {
+    return this.belongsTo('App/Models/Coupon')
+  }
 }
 
 module.exports = Category
