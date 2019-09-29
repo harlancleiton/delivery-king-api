@@ -32,20 +32,27 @@ class PaymentSchema extends Schema {
         .string('url')
         .notNullable()
         .unique()
+      table.timestamps()
+    })
+
+    this.alter('orders', table => {
       table
-        .integer('order_id')
+        .integer('payment_id')
         .unsigned()
         .notNullable()
       table
-        .foreign('order_id')
+        .foreign('payment_id')
         .references('id')
-        .inTable('orders')
+        .inTable('payments')
         .onDelete('CASCADE')
-      table.timestamps()
     })
   }
 
   down() {
+    this.table('orders', table => {
+      table.dropForeign('payment_id')
+    })
+
     this.drop('payments')
   }
 }

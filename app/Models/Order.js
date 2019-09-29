@@ -19,6 +19,10 @@ class Order extends Model {
   payment() {
     return this.hasOne('App/Models/Payment')
   }
+
+  deliveryAddress() {
+    return this.hasOne('App/Models/DeliveryAddress')
+  }
 }
 
 module.exports = Order
