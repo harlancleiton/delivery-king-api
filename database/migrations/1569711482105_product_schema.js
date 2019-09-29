@@ -9,7 +9,7 @@ class ProductSchema extends Schema {
       table.increments()
       table.string('name', 18).notNullable()
       table.text('description').notNullable()
-      table.decimal('price', 12, 2)
+      table.decimal('price', 7, 2).notNullable()
       table.integer('image_id').unsigned()
       table
         .foreign('image_id')
