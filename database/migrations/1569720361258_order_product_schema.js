@@ -7,8 +7,10 @@ class OrderProductSchema extends Schema {
   up() {
     this.create('order_products', table => {
       table.increments()
-      // table.decimal('subtotal', 7, 2).notNullable()
-      table.decimal('price', 12, 2).notNullable()
+      table
+        .decimal('price', 7, 2)
+        .unsigned()
+        .notNullable()
       table
         .integer('quantity')
         .unsigned()

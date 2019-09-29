@@ -7,7 +7,10 @@ class OrderSchema extends Schema {
   up() {
     this.create('orders', table => {
       table.increments()
-      table.decimal('total', 7, 2).notNullable()
+      table
+        .decimal('total', 7, 2)
+        .unsigned()
+        .notNullable()
       table
         .enu('status', ['PENDING', 'CANCELLED', 'SHIPPED', 'PAID', 'FINISHED'])
         .notNullable()
