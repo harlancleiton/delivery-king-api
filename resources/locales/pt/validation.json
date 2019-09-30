@@ -17,6 +17,7 @@
   "email": "{{field}} deve ser um e-mail válido.",
   "ends_with": "{{field}} deve terminar com ({{argument}}).",
   "equals": "{{field}} deve ser igual a {{argument.0}}.",
+  "exists": "{{field}} não foi encontrado",
   "in": "{{field}} deve estar entre os valores ({{argument}}).",
   "includes": "{{field}} deve conter: ({{argument}}).",
   "integer": "{{field}} deve ser um número INTEIRO.",

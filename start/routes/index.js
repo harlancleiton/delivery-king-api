@@ -18,3 +18,5 @@
 
 /** Auth routes */
 require('./auth')
+
+require('./admin')
