@@ -4,4 +4,4 @@
 
 - [ ] CategoryTransformer
 - [ ] CategoryValidator
-- [ ] ForbiddenException
+- [x] ForbiddenException
