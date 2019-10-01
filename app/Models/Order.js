@@ -5,7 +5,9 @@ const Model = use('Model')
 
 class Order extends Model {
   products() {
-    return this.hasMany('App/Models/OrderProduct')
+    return this.belongsToMany('App/Models/Product').pivotModel(
+      'App/Models/OrderProduct'
+    )
   }
 
   user() {

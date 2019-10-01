@@ -19,6 +19,12 @@ class Product extends Model {
   coupons() {
     return this.belongsTo('App/Models/Coupon')
   }
+
+  orders() {
+    return this.belongsToMany('App/Models/Order').pivotModel(
+      'App/Models/OrderProduct'
+    )
+  }
 }
 
 module.exports = Product
