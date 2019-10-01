@@ -67,3 +67,12 @@ Factory.blueprint('App/Models/Category', (faker, i, data) => {
     ...data,
   }
 })
+
+Factory.blueprint('App/Models/Product', (faker, i, data) => {
+  return {
+    name: faker.name(),
+    description: faker.paragraph(),
+    price: faker.floating({ min: 1, max: 1000 }),
+    ...data,
+  }
+})

@@ -1,7 +1,8 @@
 # DeliveryKing API
 
-### TODO
+## TODO
 
 - [ ] CategoryTransformer
 - [ ] CategoryValidator
 - [x] ForbiddenException
+- [ ] Exists Validation Rule array
