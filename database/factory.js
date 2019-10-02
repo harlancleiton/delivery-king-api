@@ -62,7 +62,7 @@ Factory.blueprint('App/Models/Image', (faker, i, data) => {
 
 Factory.blueprint('App/Models/Category', (faker, i, data) => {
   return {
-    title: faker.country({ full: true }),
+    title: faker.word(),
     description: faker.paragraph(),
     ...data,
   }

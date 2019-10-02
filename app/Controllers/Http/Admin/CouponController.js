@@ -116,18 +116,9 @@ class CouponController {
       recursive,
       can_use_for,
     })
-    if (users) {
-      await coupon.users().detach()
-      await coupon.users().attach(users)
-    }
-    if (products) {
-      await coupon.products().detach()
-      await coupon.products().attach(products)
-    }
-    if (categories) {
-      await coupon.categories().detach()
-      await coupon.categories().attach(categories)
-    }
+    if (users) await coupon.users().sync(users)
+    if (products) await coupon.products().sync(products)
+    if (categories) await coupon.categories().sync(categories)
     return response.status(204).send({})
   }
 
