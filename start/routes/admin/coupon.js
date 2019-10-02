@@ -4,12 +4,12 @@
 const Route = use('Route')
 
 Route.group(() => {
-  Route.resource('products', 'ProductController')
+  Route.resource('coupons', 'CouponController')
     .apiOnly()
     .validator(
       new Map([
-        [['products.store'], ['Admin/StoreProduct']],
-        [['products.update'], ['Admin/UpdateProduct']],
+        [['coupons.store'], ['Admin/Coupon/Store']],
+        [['coupons.update'], ['Admin/Coupon/Update']],
       ])
     )
 })

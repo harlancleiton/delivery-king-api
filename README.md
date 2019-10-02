@@ -3,6 +3,8 @@
 ## TODO
 
 - [ ] CategoryTransformer
-- [ ] CategoryValidator
+- [x] CategoryValidator
 - [x] ForbiddenException
 - [ ] Exists Validation Rule array
+- [ ] CouponTransformer
+- [ ] CouponService

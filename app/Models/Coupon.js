@@ -4,16 +4,12 @@
 const Model = use('Model')
 
 class Coupon extends Model {
-  static get dates() {
-    const dates = super.dates()
-    dates.push('valid_from')
-    dates.push('valid_until')
-    return dates
-  }
-
-  users() {
-    return this.belongsToMany('App/Models/User')
-  }
+  // static get dates() {
+  //   const dates = super.dates()
+  //   dates.push('valid_from')
+  //   dates.push('valid_until')
+  //   return dates
+  // }
 
   categories() {
     return this.belongsToMany('App/Models/Category')
@@ -25,6 +21,10 @@ class Coupon extends Model {
 
   orders() {
     return this.belongsToMany('App/Models/Order')
+  }
+
+  users() {
+    return this.belongsToMany('App/Models/User')
   }
 }
 

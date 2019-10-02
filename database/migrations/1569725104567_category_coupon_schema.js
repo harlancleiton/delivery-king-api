@@ -5,7 +5,7 @@ const Schema = use('Schema')
 
 class CouponCategorySchema extends Schema {
   up() {
-    this.create('coupon_categories', table => {
+    this.create('category_coupon', table => {
       table.increments()
       table
         .integer('coupon_id')
@@ -30,7 +30,7 @@ class CouponCategorySchema extends Schema {
   }
 
   down() {
-    this.drop('coupon_categories')
+    this.drop('category_coupon')
   }
 }
 

@@ -13,7 +13,7 @@ class Category extends Model {
   }
 
   coupons() {
-    return this.belongsTo('App/Models/Coupon')
+    return this.belongsToMany('App/Models/Coupon')
   }
 }
 

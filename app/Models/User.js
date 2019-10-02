@@ -24,16 +24,16 @@ class User extends Model {
     ]
   }
 
+  coupons() {
+    return this.belongsToMany('App/Models/Coupon')
+  }
+
   tokens() {
     return this.hasMany('App/Models/Token')
   }
 
   images() {
     return this.belongsTo('App/Models/Image')
-  }
-
-  coupons() {
-    return this.belongsToMany('App/Models/Coupons')
   }
 
   addresses() {

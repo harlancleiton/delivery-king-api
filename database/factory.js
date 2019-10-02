@@ -76,3 +76,25 @@ Factory.blueprint('App/Models/Product', (faker, i, data) => {
     ...data,
   }
 })
+
+Factory.blueprint('App/Models/Coupon', (faker, i, data) => {
+  return {
+    code: faker.string({ length: 6 }),
+    discount: faker.floating({ min: 10, max: 100, fixed: 2 }),
+    valid_from: faker.date({ year: 2000 }),
+    valid_until: faker.date({ year: 2001 }),
+    quantity: faker.integer({ min: 1, max: 200 }),
+    can_use_for: faker.pickone([
+      'PRODUCT',
+      'CLIENT',
+      'CATEGORY',
+      'PRODUCT_CLIENT',
+      'CATEGORY_PRODUCT',
+      'CATEGORY_CLIENT',
+      'ALL',
+    ]),
+    type: faker.pickone(['FREE', 'PERCENT', 'CURRENCY']),
+    recursive: faker.bool(),
+    ...data,
+  }
+})
